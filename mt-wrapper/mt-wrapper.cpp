@@ -20,9 +20,13 @@ int __cdecl wmain(int argc, WCHAR **argv, WCHAR **env)
         fprintf(stderr, "Error: mt-orig.exe not found!\n\n");
         return 1;
     }
-    // Get it full path and pass to argv[0]
-    wchar_t* path = _wfullpath(NULL, L"mt-orig.exe", 1024);
-    argv[0] = path;
+    // Get it full path, escape it with qoutes and pass to argv[0]
+    WCHAR* path = _wfullpath(NULL, L"mt-orig.exe", 1022);
+    WCHAR argv0[1024] = {'\0'};
+    wcscpy_s(argv0, L"\"");
+    wcscat_s(argv0, path);
+    wcscat_s(argv0, L"\"");
+    argv[0] = argv0;
     // Run the original mt.exe, which has been renamed to mt-orig.exe.
     for (;;)
     {
