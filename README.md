@@ -14,6 +14,4 @@ Compile it, rename original mt.exe to mt-orig.exe and place new mt.exe to same d
 
 ## Credits
 
-Thanks to user `ulatekh` from `stackoverflow.com` for original idea.
-
-https://stackoverflow.com/questions/3775406/mt-exe-general-error-c101008d-failed-to-write-the-updated-manifest-to-the-res
+Thanks to [ulatekh](https://github.com/ulatekh) for original [idea](https://stackoverflow.com/a/39257061/1618841)
